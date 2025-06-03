@@ -59,6 +59,7 @@ export const Navbar = () => {
       })
       .catch((err) => {
         console.log('User not login ');
+        console.log("API BASE URL is:", process.env.REACT_APP_API_URL);
         setIsLoggedIn(false);
       });
       
