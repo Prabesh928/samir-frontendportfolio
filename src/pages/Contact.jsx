@@ -16,7 +16,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch('http://192.168.2.27:8000/contact', {
+    const res = await fetch(`${BASE_URL}/contact`, {
       method: 'POST',
       credentials:'include',
       headers: {

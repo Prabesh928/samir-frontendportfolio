@@ -6,11 +6,13 @@ import Button from './Button';
 const Navlist = ({text, isactive,isLoggedIn, setIsLoggedIn}) => {
   const navigate = useNavigate();
   const isHome = text.toLowerCase() === "home";
+  const BASE_URL = process.env.REACT_APP_API_URL || '';
+
 
   let handleLogout =async()=>{
     
     try {
-    await fetch('http://192.168.2.27:8000/logout', {
+    await fetch(`${BASE_URL}/logout`, {
       method: 'POST',
       credentials: 'include',  
     });

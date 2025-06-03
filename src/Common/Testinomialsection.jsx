@@ -3,13 +3,14 @@ import Clientone from '../Images/clientone.jpg'
 
 
 export const Testinomialsection = () => {
+    const BASE_URL = process.env.REACT_APP_API_URL || '';
 
     let [testodata, settestodata]=useState([]);
 
     useEffect(() => {
       
       async function fetchData() {
-        const res = await fetch('http://192.168.2.27:8000/testinomial');
+        const res = await fetch(`${BASE_URL}/testinomial`);
         const data = await res.json();
         settestodata(data.data);
       }

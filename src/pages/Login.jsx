@@ -13,11 +13,12 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const BASE_URL = process.env.REACT_APP_API_URL || '';
 
   let handellogin=async()=>{
 
   try{
-  let response = await axios.post('http://192.168.2.27:8000/auth/login',{
+  let response = await axios.post(`${BASE_URL}/auth/login`,{
     email,
     password
   },

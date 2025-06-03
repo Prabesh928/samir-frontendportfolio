@@ -12,11 +12,12 @@ export const Navbar = () => {
   let navigate = useNavigate();
     const location = useLocation();
    const [isLoggedIn, setIsLoggedIn] = useState(false);
+   const BASE_URL = process.env.REACT_APP_API_URL || '';
 
    let handleLogout =async()=>{
     
     try {
-    await fetch('http://192.168.2.27:8000/auth/logout', {
+    await fetch(`${BASE_URL}/auth/logout`, {
       method: 'POST',
       credentials: 'include',  
     });
@@ -36,7 +37,7 @@ export const Navbar = () => {
   useEffect(() => {
    
    
-    fetch('http://192.168.2.27:8000/auth/verification', {
+    fetch(`${BASE_URL}/auth/verification`, {
       method: 'GET',
       credentials: 'include', // 
     })

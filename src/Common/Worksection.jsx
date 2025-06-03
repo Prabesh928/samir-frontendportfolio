@@ -4,11 +4,12 @@ import Hooter from '../Images/hooters.webp'
 export const Worksection = () => {
 
   const [items, setItems] = useState([]);
+  const BASE_URL = process.env.REACT_APP_API_URL || '';
 
   useEffect(() => {
   
   async function fetchData() {
-    const res = await fetch('http://192.168.2.27:8000/work');
+    const res = await fetch(`${BASE_URL}/work`);
     const data = await res.json();
     setItems(data.data);
   }

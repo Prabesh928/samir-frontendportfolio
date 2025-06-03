@@ -8,10 +8,11 @@ const WorkManager = () => {
   const [image, setImage] = useState(null);
 
   const [works, setWorks] = useState([]);
+  const BASE_URL = process.env.REACT_APP_API_URL || '';
 
   const fetchWorks = async () => {
     try {
-      const res = await fetch('http://192.168.2.27:8000/work');
+      const res = await fetch(`${BASE_URL}/work`);
       const data = await res.json();
       setWorks(data.data);
     } catch (error) {
@@ -25,7 +26,7 @@ const WorkManager = () => {
 
   const handleDelete = async (workid) => {
     try {
-      const res = await fetch(`http://192.168.2.27:8000/work/${workid}`, {
+      const res = await fetch(`${BASE_URL}/work/${workid}`, {
         method: 'DELETE',
         credentials: 'include',
       });
@@ -54,7 +55,7 @@ const WorkManager = () => {
     }
 
     try {
-      const res = await fetch('http://192.168.2.27:8000/work', {
+      const res = await fetch(`${BASE_URL}/work`, {
         method: 'POST',
         credentials: 'include',
         body: formData

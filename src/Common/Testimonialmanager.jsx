@@ -8,9 +8,12 @@ const Testimonialmanager = () => {
 
   const [testimonials, setTestimonials] = useState([]);
 
+  const BASE_URL = process.env.REACT_APP_API_URL || '';
+ 
+
 const fetchTestimonials = async () => {
     try {
-      const res = await fetch('http://192.168.2.27:8000/testinomial');
+      const res = await fetch(`${BASE_URL}/testinomial`);
       const data = await res.json();
       setTestimonials(data.data);
     } catch (error) {
