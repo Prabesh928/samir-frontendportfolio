@@ -59,7 +59,7 @@ export const Navbar = () => {
       })
       .catch((err) => {
         console.log('User not login ');
-        console.log("API BASE URL is:",BASE_URL);
+        console.log("API BASE URL is:prabesh",BASE_URL);
         setIsLoggedIn(false);
       });
       
