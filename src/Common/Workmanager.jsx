@@ -8,7 +8,7 @@ const WorkManager = () => {
   const [image, setImage] = useState(null);
 
   const [works, setWorks] = useState([]);
-  const BASE_URL = process.env.REACT_APP_API_URL || '';
+  const BASE_URL = process.env.VITE_API_URL || '';
 
   const fetchWorks = async () => {
     try {

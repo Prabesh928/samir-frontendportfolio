@@ -12,7 +12,7 @@ export const Navbar = () => {
   let navigate = useNavigate();
     const location = useLocation();
    const [isLoggedIn, setIsLoggedIn] = useState(false);
-   const BASE_URL = process.env.REACT_APP_API_URL || '';
+   const BASE_URL = process.env.VITE_API_URL || '';
 
    let handleLogout =async()=>{
     
@@ -59,7 +59,7 @@ export const Navbar = () => {
       })
       .catch((err) => {
         console.log('User not login ');
-        console.log("API BASE URL is prabesh",process.env.REACT_APP_API_URL);
+        console.log("API BASE URL is prabesh",BASE_URL);
         setIsLoggedIn(false);
       });
       
