@@ -3,7 +3,7 @@ import Clientone from '../Images/clientone.jpg'
 
 
 export const Testinomialsection = () => {
-    const BASE_URL = process.env.REACT_APP_API_URL || '';
+    const BASE_URL = import.meta.env.VITE_API_URL || '';
 
     let [testodata, settestodata]=useState([]);
 
