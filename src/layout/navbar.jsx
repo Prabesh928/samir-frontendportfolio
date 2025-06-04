@@ -53,13 +53,14 @@ export const Navbar = () => {
       .then((data) => {
         if (data.islogin) {
           setIsLoggedIn(true);
+          console.log("user is logged in");
         } else {
           setIsLoggedIn(false);
         }
       })
       .catch((err) => {
         console.log('User not login ');
-        console.log("API BASE URL is prabesh",BASE_URL);
+       
         setIsLoggedIn(false);
       });
       
