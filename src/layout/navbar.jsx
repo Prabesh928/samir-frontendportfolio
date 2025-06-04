@@ -39,13 +39,14 @@ export const Navbar = () => {
    
     fetch(`${BASE_URL}/auth/verification`, {
       method: 'GET',
-      credentials: 'include', // 
+      credentials: 'include', 
     })
       .then((res) => {
          if (!res.ok) {
       
       
       setIsLoggedIn(false);
+      console.log(res);
       return null;
     }
        
@@ -53,6 +54,7 @@ export const Navbar = () => {
       .then((data) => {
         if (data.islogin) {
           setIsLoggedIn(true);
+          console.log(data)
           console.log("user is logged in");
         } else {
           setIsLoggedIn(false);
