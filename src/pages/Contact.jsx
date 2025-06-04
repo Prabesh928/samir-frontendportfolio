@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PageWrapper from '../Common/PageWrapper';
 
 const Contact = () => {
+   const BASE_URL = import.meta.env.VITE_API_URL || '';
   const [form, setForm] = useState({
     name: '',
     email: '',
