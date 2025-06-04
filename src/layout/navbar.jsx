@@ -12,7 +12,7 @@ export const Navbar = () => {
   let navigate = useNavigate();
     const location = useLocation();
    const [isLoggedIn, setIsLoggedIn] = useState(false);
-   const BASE_URL = process.env.VITE_API_URL || '';
+   const BASE_URL = import.meta.env.VITE_API_URL || '';
 
    let handleLogout =async()=>{
     
