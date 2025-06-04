@@ -8,7 +8,7 @@ const Testimonialmanager = () => {
 
   const [testimonials, setTestimonials] = useState([]);
 
-  const BASE_URL = process.env.VITE_API_URL || '';
+ const BASE_URL = import.meta.env.VITE_API_URL || '';
  
 
 const fetchTestimonials = async () => {
@@ -37,7 +37,7 @@ const fetchTestimonials = async () => {
     }
 
     try {
-      const res = await fetch('http://192.168.2.27:8000/testinomial', {
+      const res = await fetch(`${BASE_URL}/testinomial`, {
         method: 'POST',
         credentials: 'include',
         body: formData,
@@ -58,7 +58,7 @@ const fetchTestimonials = async () => {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`http://192.168.2.27:8000/testinomial/${id}`, {
+      const res = await fetch(`${BASE_URL}/testinomial/${id}`, {
         method: 'DELETE',
         credentials: 'include',
       });
