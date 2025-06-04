@@ -6,7 +6,7 @@ import Button from './Button';
 const Navlist = ({text, isactive,isLoggedIn, setIsLoggedIn}) => {
   const navigate = useNavigate();
   const isHome = text.toLowerCase() === "home";
-  const BASE_URL = process.env.VITE_API_URL || '';
+const BASE_URL = import.meta.env.VITE_API_URL || '';
 
 
   let handleLogout =async()=>{
