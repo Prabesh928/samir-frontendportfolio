@@ -8,6 +8,7 @@ const PageWrapper = ({ children }) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -30 }}
       transition={{ duration:1 }}
+      style={{ all: 'unset', display: 'contents' }}
     >
       {children}
     </motion.div>

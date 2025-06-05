@@ -116,7 +116,7 @@ export const Navbar = () => {
    {/* Tablet/Desktop Nav */}
 
   <PageWrapper>
-      <ul className="hidden md:flex lg:flex lg:items-center gap-10 lg:ml-10 text-md font-medium w-[70%] lg:w-[50%] lg:p-2 lg:font-garamond  hover:scale-100 transition-all duration-500 ease-in-out ">
+      <ul className=" hidden md:flex lg:flex lg:items-center gap-10 lg:ml-10 text-md font-medium w-[70%] lg:w-[50%] lg:p-2 lg:font-garamond  hover:scale-100 transition-all duration-500 ease-in-out ">
         <Link to={'/'} className="px-6 py-1 lg:h-[80%] hover:text-white hover:bg-black cursor-pointer active:bg-black active:text-white rounded-xl transition-all duration-400 ease-in ">Home</Link>
         <Link to={'/about'} className="px-6 py-1 lg:h-[80%] hover:text-white hover:bg-black cursor-pointer active:bg-black active:text-white rounded-xl transition-all duration-400 ease-in ">About</Link>
         <Link to={'/work'} className="px-6 py-1 lg:h-[80%] hover:text-white hover:bg-black cursor-pointer active:bg-black active:text-white rounded-xl transition-all duration-400 ease-in ">Work</Link>
