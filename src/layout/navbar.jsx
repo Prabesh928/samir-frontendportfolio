@@ -9,6 +9,8 @@ import { useLocation } from 'react-router-dom';
 import PageWrapper from '../Common/PageWrapper';
 
 export const Navbar = () => {
+  const [isVerifying, setIsVerifying] = useState(true); 
+
   let navigate = useNavigate();
     const location = useLocation();
    const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -64,7 +66,10 @@ export const Navbar = () => {
         console.log('User not login ');
        
         setIsLoggedIn(false);
-      });
+      })
+      .finally(() => {
+      setIsVerifying(false); 
+    });
       
       
   }, []);
@@ -102,6 +107,8 @@ export const Navbar = () => {
     <ul className={`  lg:hidden md:hidden  bg-white h-[80vh] w-[60vw] fixed top-0 right-0 flex flex-col items-left  text-2xl gap-0.5 mt-10 transform
          transition-transform duration-500 ease-in-out  ${isMenuOpen ? 'translate-x-0 pointer-events-auto opacity-90' : 'translate-x-full pointer-events-none overflow-hidden opacity-0'}`}>
       
+       {!isVerifying && (
+        <>
         <Navlist text={"Home"} isactive={true}/>
         <Navlist text={"About"} isactive={false}/>
         <Navlist text={"Work"} isactive={false}/>
@@ -109,6 +116,8 @@ export const Navbar = () => {
         {isLoggedIn ? <Navlist text={"Logout"} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isactive={false}/> :<Navlist text={"Login"} isactive={false}/> }
         
         {isLoggedIn &&  <Navlist text={"Dashboard"} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isactive={false}/>}
+       </>
+       )}
       </ul>
 
    {/* desk and tabler */} 
